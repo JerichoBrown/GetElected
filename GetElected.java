@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,6 +16,7 @@ public class GetElected {
         double votingVoters;
         String officeTitle = "Alderperson";
         int electionCycle = 0;
+        boolean longOrShort = true;
 
 
         System.out.println("Welcome to Get Elected!");
@@ -40,8 +39,10 @@ public class GetElected {
 
         if (cycle.equalsIgnoreCase("L")) {
             electionCycle = 300;
+            longOrShort = true;
         } else if (cycle.equalsIgnoreCase("S")) {
             electionCycle = 100;
+            longOrShort = false;
         } else {
             System.out.println("\nSilly government forms!");
             System.out.println("Try reading the instructions this time ...");
@@ -347,8 +348,16 @@ public class GetElected {
 
             // TODO Figure out how to run an election.
 
+            if (longOrShort == true) {
+                electionCycle = 300;
+            } else {
+                electionCycle = 100;
+            }
+
+
+
             System.out.println("\nI need to figure out how to re-elect myself");
-            break;
+            System.out.println(electionCycle);
 
         }
 
